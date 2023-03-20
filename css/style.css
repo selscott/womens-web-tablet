@@ -1,0 +1,396 @@
+body {
+    padding-top: 20px;
+    font-size: 16pt;
+    font-family: 'Poppins', sans-serif;
+    background-color: #D5E6DD;
+}
+
+.container {
+    display: block;
+    width: 85%;
+    margin: auto;
+}
+
+h1 {
+    padding: 40px 0px 20px 0px;
+    text-align: center;
+    color: #341B4D;
+    font-size: 36pt;
+    font-family: 'Gloock', serif;
+}
+
+h2, dt {
+    color: #5F4B73;
+    font-size: 24pt;
+}
+
+h3, dd {
+    padding: 10px 0px;
+    color: #341B4D;
+    font-size: 20pt;
+}
+
+p {
+    padding-bottom: 15px;
+    font-size: 12pt;
+    line-height: 22pt;
+}
+
+.subtitle, .footer-text {
+    color: #5F4B73;
+    font-size: 16pt;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.footer-text {
+    font-weight: 400;
+    padding-bottom: 5px;
+}
+
+img {
+    width: 100%;
+    margin: 20px 0px;
+    padding: 20px;
+    border: double #174D32 10px;
+    border-radius: 60px 15px;
+    background-image: url("../images/poly_grid.svg");
+    background-color: #D4CED9;
+}
+
+img:hover {
+    border: outset #174D32 10px;
+    opacity: 0.85;
+}
+
+div:nth-child(even) img:hover {
+    border: inset #174D32 10px;
+}
+
+#about-image {
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    /* animation */
+    animation-name: pulse;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes pulse {
+    from {
+      transform: scale3d(1, 1, 1);
+    }
+    50% {
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+    to {
+      transform: scale3d(1, 1, 1);
+    }
+}
+
+a {
+    color: #174D32;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+nav li {
+    padding: 5px;
+    text-align: center;
+}
+
+nav a:link {
+    text-decoration: none;
+    color: #5F4B73;
+}
+
+nav a:visited {
+    color: #5F4B73;
+}
+
+nav a:hover {
+    color: #4F3866;
+}
+
+nav a:active {
+    color: #412859;
+}
+
+nav a.current {
+    color: #341B4D;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
+.skip {
+    position: absolute;
+    left: -1000px;
+    padding: 10px;
+}
+
+.skip:focus {
+    left: 0px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.grid-item {
+    grid-column: span 1;
+}
+
+dl {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: dotted #341B4D 5px;
+}
+
+.dictionary-container {
+    overflow: hidden;
+  }
+  
+.filter {
+    display: none;
+    float: left;
+}
+  
+.show {
+    display: block;
+}
+
+#button-container {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    column-gap: 10px;
+    justify-content: space-evenly;
+}
+  
+.btn {
+    padding: 5px 5px;
+    background-color: #538069;
+    color: #FFFFFF;
+    font-size: 12pt;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+  
+.btn:hover {
+    background-color: #296647;
+}
+  
+.btn.active {
+    background-color: #174D32;
+}
+
+h3.key-works ~ ul {
+    margin-bottom: 60px;
+}
+
+h3.key-works ~ ul li {
+    font-size: 12pt;
+}
+
+footer {
+    margin-top: 60px;
+    padding: 20px 0px;
+    background-color: #D4CED9;
+    border-top: solid #341B4D 5px;
+}
+
+.top {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+:root {
+    --purple-rbg-color: 95, 75, 115;
+    --green-rbg-color: 23, 77, 50;
+}
+ 
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 10px solid rgba(var(--purple-rbg-color), .70);
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    animation: cursor-pulse 550ms infinite alternate;
+}
+
+.cursor-expand {
+    animation: cursor-expand 550ms forwards;
+    border: 10px solid rgb(var(--green-rbg-color));
+}
+
+@keyframes cursor-pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+       transform: scale(1.5)
+    }
+}
+ 
+@keyframes cursor-expand {
+    0% {
+       transform: scale(1);
+    }
+    50% {
+       transform: scale(3);
+    }
+    100% {
+       transform: scale(1);
+       opacity: 0;
+    }
+}
+
+
+
+@media screen and (min-width: 800px) {
+    .container {
+        width: 90%;
+    }
+
+    h3 {
+        font-size: 16pt;
+    }
+
+    p {
+        font-size: 14pt;
+    }
+
+    #about-image {
+        padding: 20px;
+    }
+
+    nav {
+        align-items: flex-center;
+    }
+
+    nav li {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+    }
+    
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+    }
+
+    .grid-item {
+        grid-column: span 1;
+        max-height: 75vh;
+        overflow: auto;
+        padding: 0px 20px;
+        border-bottom: double #174D32 10px;
+    }
+
+    .grid-item h2 {
+        text-align: center;
+        font-size: 20pt;
+    }
+
+    .grid-item p {
+        font-size: 12pt;
+    }
+
+    .grid-item img {
+        display: block;
+        margin: 0px auto 40px auto;
+        width: 60vh;
+        height: 60vh;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    #simone img, #phillis img {
+        object-position: 70%;
+    }
+
+    #virginia img, #jane img {
+        object-position: 30%;
+    }
+
+    #kamala img {
+        object-position: 10%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    h1 {
+        padding: 20px 0px;
+        font-size: 40pt;
+    }
+
+    h2, dt {
+        font-size: 28pt;
+    }
+
+    h3, dd {
+        font-size: 20pt;
+    }
+
+    p {
+        font-size: 14pt;
+    }
+
+    img {
+        width: 30%;
+    }
+
+    #about-image {
+        width: 80%;
+        padding: 20px;
+    }
+
+    nav {
+        align-items: flex-end;
+    }
+
+    nav li {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    h3.key-works ~ ul li {
+        font-size: 14pt;
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    @keyframes pulse {
+        0% {
+            transform: none;
+        }
+    }
+
+    @keyframes cursor-pulse {
+        0% {
+            transform: none;
+        }
+    }
+     
+    @keyframes cursor-expand {
+        0% {
+           transform: none;
+        }
+    }
+}
